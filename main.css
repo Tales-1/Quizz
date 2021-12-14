@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background:rgb(240, 239, 239);
+    
+}
+
+header{
+    width: 100%;
+    text-align: center;
+    font-size: clamp(1.3rem, 3vw, 2.5rem);
+    line-height: 4rem;
+    margin-top: 5rem;
+    
+}
+
+span{
+    display: block; 
+    letter-spacing: .3rem;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+h1{
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+    font-size:clamp(2.5rem, 2vw, 3.5rem);
+
+}
+
+.question{
+    position: absolute;
+    top: 1.5rem;
+    left:5rem;
+    animation: big 4s infinite;
+
+}
+
+@keyframes big{
+    0%{
+        transform: scale(0.8) rotate(360deg);
+    }
+    50%{transform: scale(1.5);}
+    100%{transform:scale(0.8) ;}
+}
+
+.start, .top-left, .top-right, .bottom-left, .bottom-right{
+    text-decoration: none;
+    padding: 1.2rem 2rem;
+    border-radius: 1rem;
+    color: black;
+    background: rgb(238, 238, 238);
+    transition: all 100ms ease-in;
+    
+}
+
+.start:hover, .top-left:hover, .top-right:hover, .bottom-left:hover, .bottom-right:hover{
+    transform: scale(1.05);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+    background:linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+}
+
+#one, #two{
+    width: 200px;
+    border-radius: 20em;
+}
+
+#one{
+    animation: right 3s infinite;
+}
+
+#two{display: block;
+     animation:left 3s infinite;
+    animation-direction: reverse;}
+
+@keyframes right{
+    0%{
+        margin-left:-10em;
+        transform: rotate(360deg);}
+
+    100%{
+        margin-left: 100%;
+    }
+}
+
+@keyframes left{
+    0%{
+        margin-left:-10em;
+        transform: rotate(360deg);}
+
+    100%{
+        margin-left: 100%;
+    }
+}
+
+.answers{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    margin-top: 3em;
+    gap:1rem;
+}
+
+.answers > * {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    border: 1px solid black;
+    flex-basis: 100%;
+    margin-inline: auto;
+    max-width: 500px;
+    text-align: center;
+}
+
+#youlose{
+    position: absolute;
+    top: 20%;
+
+}
+
+#youlose h1{ font-size: 70px;}
+
+.find-me{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.one{
+    grid-row: 1;
+    grid-column:1;
+}
+
+.two{
+    grid-row: 3;  
+    grid-column:2;
+}
+
+.three{
+    grid-row:3;
+    grid-column: 5;
+}
+
+.four{
+    grid-row: 5;
+    grid-column: 4;
+}
+
+
+.invisible{
+    margin-inline: 2em;
+    text-decoration: none;
+    border-radius: 1rem;
+    color: black;
+    background: rgb(238, 238, 238);
+    transition: all 100ms ease-in;
+    position: relative;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 1rem;
+    
+}
+
+.invisible::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgb(240, 239, 239);
+    
+    
+}
+
+.invisible:hover::before{
+    z-index: -1;
+}
+
+
+
+.gay-bar{
+    display: flex;
+    width: 70%;
+    height: 1.5rem;
+    border: 1.5px solid black;
+    border-radius: 2rem;
+    flex-direction: column;
+    margin: auto;
+    position: relative;
+}
+
+.gay-bar::before{
+    content:'98% GEH';
+    font-size: 40px;
+    position: absolute;
+    left: 40%;
+    top: 50px;
+    animation: bouncein 6s ;
+    
+    
+}
+
+@keyframes bouncein{
+    0%{opacity: 0;}
+    70%{opacity: 10%;}
+    100%{opacity: 80%;}
+    }
+
+.progress{
+    width: 98%;
+    height: 1.4rem;
+    border-radius: 2rem;
+    background:linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    animation: loading 5s ease-in-out;
+    
+}
+
+
+
+@keyframes loading{
+    0%{
+        width: 10px;
+    }
+
+    100%{
+        width: 98%;
+    }
+}
+
+#share{
+    position: relative;
+    top: 5rem;
+    text-align: center;
+    font-size: 3rem;
+}
+
+#home{
+    position: absolute;
+    margin: 2rem 0 0 2rem;
+}
